@@ -1,4 +1,4 @@
-import './globals.css'
+import './styles/globals.css'
 
 import type { Metadata } from 'next'
 import { ClerkProvider } from '@clerk/nextjs'
@@ -7,6 +7,7 @@ import { fontMono, fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import { Toaster } from '@/components/ui/Toaster'
 import { TailwindIndicator } from '@/components/TailwindIndicator'
+import { ThemeProvider } from '@/components/ThemeProvider'
 
 export const metadata: Metadata = {
 	title: 'NUDE PROJECT | By artists, for artists.',
@@ -30,8 +31,10 @@ export default function RootLayout({
 						fontMono.variable
 					)}
 				>
-					{children}
-					<TailwindIndicator />
+					<ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+						{children}
+						<TailwindIndicator />
+					</ThemeProvider>
 					<Toaster />
 				</body>
 			</html>
