@@ -1,6 +1,6 @@
 import { currentUser } from '@clerk/nextjs'
 
-// import { SiteFooter } from '@/components/layouts/site-footer'
+import { SiteFooter } from '@/components/layouts/SiteFooter'
 import { SiteHeader } from '@/components/layouts/SiteHeader'
 
 interface LobbyLayoutProps {
@@ -14,7 +14,7 @@ export default async function LobbyLayout({ children }: LobbyLayoutProps) {
 		<div className='relative flex min-h-screen flex-col'>
 			<SiteHeader user={user} />
 			<main className='flex-1'>{children}</main>
-			{/* <SiteFooter /> */}
+			<SiteFooter />
 		</div>
 	)
 }
