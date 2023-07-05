@@ -86,7 +86,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 										</DropdownMenuItem>
 									</DropdownMenuGroup>
 									<DropdownMenuItem asChild>
-										<Link href='/signout'>
+										<Link href='/sign-out'>
 											<Icons.logout
 												className='mr-2 h-4 w-4'
 												aria-hidden='true'
@@ -97,7 +97,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 								</DropdownMenuContent>
 							</DropdownMenu>
 						) : (
-							<Link href='/signin'>
+							<Link href='/sign-in'>
 								<div
 									className={buttonVariants({
 										size: 'sm',

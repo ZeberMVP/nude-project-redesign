@@ -40,7 +40,7 @@ export function MobileNav() {
 						className='flex items-center'
 						onClick={() => setIsOpen(false)}
 					>
-						<Icons.logo className='mr-2 h-4 w-4' aria-hidden='true' />
+						<h1 className='font-bold text-2xl text-center'>NUDE PROJECT®</h1>
 					</Link>
 				</div>
 				<ScrollArea className='my-4 h-[calc(100vh-8rem)] pb-10 pl-6'>
