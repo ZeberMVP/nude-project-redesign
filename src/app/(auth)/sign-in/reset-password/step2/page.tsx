@@ -11,9 +11,6 @@ import { ResetPasswordStep2Form } from '@/components/forms/ResetPasswordFormStep
 import { Shell } from '@/components/Shell'
 
 export const metadata: Metadata = {
-	metadataBase: new URL(
-		process.env.NEXT_PUBLIC_APP_URL || process.env.NEXT_PUBLIC_VERCEL_URL || ''
-	),
 	title: 'Reset Password',
 	description: 'Enter your email to reset your password',
 }
