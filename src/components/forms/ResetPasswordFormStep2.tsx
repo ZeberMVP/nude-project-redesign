@@ -20,7 +20,7 @@ import {
 } from '@/components/ui/Form'
 import { Input } from '@/components/ui/Input'
 import { Icons } from '@/components/Icons'
-import { Input as PasswordInput } from '@/components/PasswordInput'
+import { PasswordInput } from '@/components/PasswordInput'
 
 type Inputs = z.infer<typeof resetPasswordSchema>
 
