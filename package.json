@@ -6,7 +6,11 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"postinstall": "drizzle-kit generate:mysql",
+		"db:push": "drizzle-kit push:mysql --config ./drizzle.config.ts",
+		"db:introspect": "drizzle-kit introspect:mysql",
+		"db:studio": "drizzle-kit studio"
 	},
 	"dependencies": {
 		"@clerk/nextjs": "^4.21.13",
@@ -44,6 +48,7 @@
 		"react-dom": "18.2.0",
 		"react-dropzone": "^14.2.3",
 		"react-hook-form": "^7.45.1",
+		"react-wrap-balancer": "^1.0.0",
 		"sonner": "^0.5.0",
 		"tailwind-merge": "^1.13.2",
 		"tailwindcss": "3.3.2",
@@ -52,6 +57,7 @@
 		"zod": "^3.21.4"
 	},
 	"devDependencies": {
+		"dotenv": "^16.3.1",
 		"drizzle-kit": "^0.19.3",
 		"prettier": "^2.8.8",
 		"prettier-plugin-tailwindcss": "^0.3.0"
