@@ -11,7 +11,6 @@ import { Button, buttonVariants } from '@/components/ui/Button'
 import {
 	DropdownMenu,
 	DropdownMenuContent,
-	DropdownMenuGroup,
 	DropdownMenuItem,
 	DropdownMenuLabel,
 	DropdownMenuSeparator,
@@ -74,17 +73,6 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 										</div>
 									</DropdownMenuLabel>
 									<DropdownMenuSeparator />
-									<DropdownMenuGroup>
-										<DropdownMenuItem asChild>
-											<Link href='/email-preferences'>
-												<Icons.mail
-													className='mr-2 h-4 w-4'
-													aria-hidden='true'
-												/>
-												Email Preferences
-											</Link>
-										</DropdownMenuItem>
-									</DropdownMenuGroup>
 									<DropdownMenuItem asChild>
 										<Link href='/sign-out'>
 											<Icons.logout

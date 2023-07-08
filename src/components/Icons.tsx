@@ -26,7 +26,6 @@ import {
 	Image,
 	Loader2,
 	LogOut,
-	Mail,
 	Menu,
 	MessageSquare,
 	Minus,
@@ -63,7 +62,6 @@ export type Icon = LucideIcon
 export const Icons = {
 	sun: SunMedium,
 	moon: Moon,
-	mail: Mail,
 	twitter: Twitter,
 	close: X,
 	spinner: Loader2,
