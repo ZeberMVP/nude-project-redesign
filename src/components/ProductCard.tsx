@@ -54,7 +54,7 @@ export function ProductCard({
 		>
 			<Link
 				aria-label={`View ${product.name} details`}
-				href={`/product/${product.id}`}
+				href={`/clothing/${product.id}`}
 			>
 				<CardHeader className='border-b p-0'>
 					<AspectRatio ratio={9 / 11}>

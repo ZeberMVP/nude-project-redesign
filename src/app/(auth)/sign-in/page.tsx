@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function SignInPage() {
 	return (
-		<Shell layout='auth'>
+		<Shell className='max-w-lg'>
 			<Card>
 				<CardHeader className='space-y-1'>
 					<CardTitle className='text-2xl'>Sign in</CardTitle>
@@ -42,12 +42,14 @@ export default function SignInPage() {
 					</div>
 					<SignInForm />
 				</CardContent>
-				<CardFooter className='flex flex-wrap items-center space-x-2'>
-					<div className='flex-1 text-sm text-muted-foreground'>
-						Don&apos;t have an account?{' '}
+				<CardFooter className='flex flex-wrap items-center justify-between gap-2'>
+					<div className='text-sm text-muted-foreground'>
+						<span className='mr-1 hidden sm:inline-block'>
+							Don&apos;t have an account?
+						</span>
 						<Link
 							aria-label='Sign up'
-							href='/sign-up'
+							href='/signup'
 							className='text-primary underline-offset-4 transition-colors hover:underline'
 						>
 							Sign up
@@ -55,7 +57,7 @@ export default function SignInPage() {
 					</div>
 					<Link
 						aria-label='Reset password'
-						href='/sign-in/reset-password'
+						href='/signin/reset-password'
 						className='text-sm text-primary underline-offset-4 transition-colors hover:underline'
 					>
 						Reset password
