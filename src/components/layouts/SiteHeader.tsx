@@ -76,12 +76,12 @@ export function SiteHeader({ user }: SiteHeaderProps) {
 									<DropdownMenuSeparator />
 									<DropdownMenuGroup>
 										<DropdownMenuItem asChild>
-											<Link href='/dashboard/account'>
-												<Icons.user
+											<Link href='/email-preferences'>
+												<Icons.mail
 													className='mr-2 h-4 w-4'
 													aria-hidden='true'
 												/>
-												Account
+												Email Preferences
 											</Link>
 										</DropdownMenuItem>
 									</DropdownMenuGroup>

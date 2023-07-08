@@ -20,7 +20,7 @@ interface NewsletterWelcomeEmailProps {
 	token: string
 }
 
-const baseUrl = 'https://nude-project-redesign.vercel.app/'
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL
 
 // For previewing we need to put images in the .react-email/public folder
 // In production we need to put images in the root public folder
