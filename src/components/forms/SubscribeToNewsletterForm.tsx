@@ -35,8 +35,6 @@ export function SubscribeToNewsletterForm() {
 	})
 
 	function onSubmit(data: Inputs) {
-		console.log(data)
-
 		startTransition(async () => {
 			const response = await fetch('/api/newsletter/subscribe', {
 				method: 'POST',
