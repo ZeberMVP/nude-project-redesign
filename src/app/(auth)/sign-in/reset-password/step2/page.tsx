@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function ResetPasswordStep2Page() {
 	return (
-		<Shell layout='auth'>
+		<Shell className='max-w-lg'>
 			<Card>
 				<CardHeader className='space-y-1'>
 					<CardTitle className='text-2xl'>Reset password</CardTitle>
@@ -25,7 +25,7 @@ export default function ResetPasswordStep2Page() {
 						Enter your email address and we will send you a verification code
 					</CardDescription>
 				</CardHeader>
-				<CardContent className='grid gap-4'>
+				<CardContent>
 					<ResetPasswordStep2Form />
 				</CardContent>
 			</Card>
