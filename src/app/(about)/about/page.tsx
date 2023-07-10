@@ -13,10 +13,10 @@ const page = () => {
 				were raised in completely different environments. One from Bali, the
 				other from Burgos (a little more north) had an instant connection that,
 				after a month of knowing each other, led them to create a joint movement
-				that would change their lives forever. "For us, it was all about the
-				hip-hop scene, the rawness of skateboarding and the artist's creativity
-				which motivated us to imprint a way of living shared through the
-				internet."
+				that would change their lives forever. &quot;For us, it was all about
+				the hip-hop scene, the rawness of skateboarding and the artist&apos;s
+				creativity which motivated us to imprint a way of living shared through
+				the internet.&quot;
 			</Balancer>
 			<span className='text-yellow-900 text-lg font-medium text-center'>
 				“By artists, for artists”
@@ -73,8 +73,8 @@ const page = () => {
 			<h2 className='text-center text-xl font-medium'>OUR PRINCIPLES</h2>
 			<Balancer className='mx-auto text-md md:text-center'>
 				One of our goals is to change the perceived idea of success. We realised
-				that focusing on money or fame just to seek acceptance, won't ever be
-				fulfilling.
+				that focusing on money or fame just to seek acceptance, won&apos;t ever
+				be fulfilling.
 			</Balancer>
 			<div
 				aria-label='Girl wearing an unisex Nude Project shirt'
@@ -116,8 +116,8 @@ const page = () => {
 			<Balancer className='mx-auto text-md md:text-center'>
 				More than a brand, we have become a lifestyle, with music that narrates
 				our journey. Hip hop, urban latin and a subtle touch of diverse genres.
-				All good music. Here's the link to our Spotify playlist, the official
-				soundtrack to the movement.
+				All good music. Here&apos;s the link to our Spotify playlist, the
+				official soundtrack to the movement.
 			</Balancer>
 			<div
 				aria-label='Model wearing a balaclava mask'
