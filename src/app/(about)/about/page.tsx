@@ -5,9 +5,9 @@ import { Balancer } from 'react-wrap-balancer'
 
 const page = () => {
 	return (
-		<Shell as={'div'} className='gap-12'>
+		<Shell as={'div'} className='gap-8 md:gap-12'>
 			<h1 className='text-center text-2xl font-semibold'>ABOUT US</h1>
-			<Balancer className='mx-auto text-md'>
+			<Balancer className='mx-auto text-md md:text-center'>
 				NUDE PROJECT is a ready-to-wear label founded in 2018 in a small dorm
 				room by two friends eager to create something different. Bruno and Alex
 				were raised in completely different environments. One from Bali, the
@@ -34,7 +34,7 @@ const page = () => {
 				/>
 			</div>
 			<h2 className='text-center text-xl font-medium'>BEHIND THE DESIGNS</h2>
-			<Balancer className='mx-auto text-md'>
+			<Balancer className='mx-auto text-md md:text-center'>
 				We strive for designs that embrace a modern attitude for a creative
 				life, seamlessly blending comfort, minimalism and elegance in every cut.
 			</Balancer>
@@ -51,7 +51,7 @@ const page = () => {
 				/>
 			</div>
 			<h2 className='text-center text-xl font-medium'>A MOVEMENT</h2>
-			<Balancer className='mx-auto text-md'>
+			<Balancer className='mx-auto text-md md:text-center'>
 				NUDE PROJECT is more than just clothing. It is a creative platform for
 				the misfits, the outcasts and the wild to express themselves. Our
 				garments aim to inspire the new generation to pursue their passion,
@@ -71,7 +71,7 @@ const page = () => {
 				/>
 			</div>
 			<h2 className='text-center text-xl font-medium'>OUR PRINCIPLES</h2>
-			<Balancer className='mx-auto text-md'>
+			<Balancer className='mx-auto text-md md:text-center'>
 				One of our goals is to change the perceived idea of success. We realised
 				that focusing on money or fame just to seek acceptance, won't ever be
 				fulfilling.
@@ -89,7 +89,7 @@ const page = () => {
 				/>
 			</div>
 			<h2 className='text-center text-xl font-medium'>VIRALITY</h2>
-			<Balancer className='mx-auto text-md'>
+			<Balancer className='mx-auto text-md md:text-center'>
 				Our first big statement was when we gained over 60,000 followers
 				overnight. Some people called it luck, but if there is something we are
 				certain about is that the harder we work, the more luck we have.
@@ -113,7 +113,7 @@ const page = () => {
 			>
 				<Icons.spotify />
 			</a>
-			<Balancer className='mx-auto text-md'>
+			<Balancer className='mx-auto text-md md:text-center'>
 				More than a brand, we have become a lifestyle, with music that narrates
 				our journey. Hip hop, urban latin and a subtle touch of diverse genres.
 				All good music. Here's the link to our Spotify playlist, the official
@@ -131,7 +131,7 @@ const page = () => {
 					className=' w-full object-fill'
 				/>
 			</div>
-			<Balancer className='mx-auto text-md'>
+			<Balancer className='mx-auto text-md md:text-center'>
 				Early on we realised the traditional path did not fit us: go to
 				university, get the job that your parents told you to, pay your
 				mortgage… Following our principles we itched to start working. Because
