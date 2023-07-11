@@ -26,6 +26,7 @@ These are the technologies I have used to build this awesome website:
 <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mysql-colored.svg" width="36" height="36" alt="MySQL" /></a>
 <a href="https://orm.drizzle.team/" target="_blank" rel="noreferrer"><img src="readme_files/drizzle.png" width="36" height="36" alt="DrizzleORM" /></a>
 <a href="https://clerk.com/" target="_blank" rel="noreferrer"><img src="readme_files/clerk.png" width="36" height="36" alt="Clerk" /></a>
+<a href="https://ui.shadcn.com/" target="_blank" rel="noreferrer"><img src="readme_files/shadcn-ui.png" width="36" height="36" alt="shadcn/ui" /></a>
 </p>
 
 ## Views from the website
