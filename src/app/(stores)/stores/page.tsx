@@ -8,10 +8,10 @@ const page = () => {
 			<h1 className='font-bold text-4xl text-yellow-950 text-center italic'>
 				OUR STORES
 			</h1>
-			<Balancer className='font-semibold text-2xl text-yellow-950 text-center'>
+			<Balancer className='font-semibold text-2xl text-yellow-950 text-center mx-auto'>
 				We already are in Madrid, Valencia and Barcelona
 			</Balancer>
-			<Balancer className='font-medium md:text-center'>
+			<Balancer className='font-medium md:text-center mx-auto'>
 				Nude Project is a ready-to-wear label founded in 2018 in a small dorm
 				room by two friends eager to create something different. Now we have a
 				real place were capture the essence of the brand made for the Nude Cult.
