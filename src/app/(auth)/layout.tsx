@@ -12,7 +12,7 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
 			<AspectRatio ratio={16 / 9}>
 				<Image
 					src='/images/auth-layout.webp'
-					className='-z-10 opacity-50'
+					className='-z-10 opacity-50 hidden 2xl:block'
 					alt='A beach with the words NUDE TOUR® written in the water.'
 					priority
 					sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
