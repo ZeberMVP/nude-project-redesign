@@ -4,8 +4,7 @@ import mysql from 'mysql2/promise'
 import * as schema from './schema'
 
 // Create the connection
-
-const connection = await mysql.createConnection({
+const poolConnection = mysql.createPool({
 	host: process.env.DATABASE_HOST,
 	user: process.env.DATABASE_USER,
 	database: process.env.DATABASE_NAME,
@@ -13,4 +12,4 @@ const connection = await mysql.createConnection({
 	password: process.env.DATABASE_PASSWORD,
 })
 
-export const db = drizzle(connection, { schema })
+export const db = drizzle(poolConnection, { schema })

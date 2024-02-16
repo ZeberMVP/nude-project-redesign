@@ -75,6 +75,7 @@ export async function addToCartAction(input: z.infer<typeof cartItemSchema>) {
 		})
 
 		// Note: .set() is only available in a Server Action or Route Handler
+		//@ts-expect-error
 		cookieStore.set('cartId', String(cart.insertId))
 
 		revalidatePath('/')
