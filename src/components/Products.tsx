@@ -1,6 +1,5 @@
 'use client'
 
-import { type Product } from '@/db/schema'
 import type { Option } from '@/types'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import * as React from 'react'
@@ -32,11 +31,12 @@ import { Slider } from '@/components/ui/Slider'
 import { sortOptions } from '@/config/products'
 import { useDebounce } from '@/hooks/use-debounce'
 import { cn, toTitleCase } from '@/lib/utils'
+import { SelectProducts } from '@/db/schema'
 
 interface ProductsProps {
-	products: Product[]
+	products: SelectProducts[]
 	pageCount: number
-	categories?: Product['category'][]
+	categories?: SelectProducts['category'][]
 }
 
 export function Products({ products, pageCount, categories }: ProductsProps) {

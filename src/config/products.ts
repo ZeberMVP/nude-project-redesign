@@ -1,4 +1,4 @@
-import { type Product } from '@/db/schema'
+import { SelectProducts } from '@/db/schema'
 
 export const sortOptions = [
 	{ label: 'Date: Old to new', value: 'createdAt.asc' },
@@ -19,7 +19,7 @@ export const sortOptions = [
 ]
 
 export const productCategories: {
-	title: Product['category']
+	title: SelectProducts['category']
 }[] = [
 	{
 		title: 'tees',

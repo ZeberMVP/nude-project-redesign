@@ -1,4 +1,4 @@
-import { type Product } from '@/db/schema'
+import { SelectProducts } from '@/db/schema'
 
 import { toTitleCase } from '@/lib/utils'
 import { Header } from '@/components/Header'
@@ -6,12 +6,9 @@ import { Products } from '@/components/Products'
 import { Shell } from '@/components/Shell'
 import { getProductsAction } from '@/app/_actions/product'
 
-// Running out of edge function execution units on vercel free plan
-// export const runtime = "edge"
-
 interface CategoryPageProps {
 	params: {
-		category: Product['category']
+		category: SelectProducts['category']
 	}
 	searchParams: {
 		[key: string]: string | string[] | undefined

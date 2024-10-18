@@ -1,9 +1,9 @@
 import * as React from 'react'
-import { type AppRouterInstance } from 'next/dist/shared/lib/app-router-context'
 
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
 import { Icons } from '@/components/Icons'
+import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime'
 
 interface PaginationButtonProps
 	extends React.DetailedHTMLProps<

@@ -1,7 +1,6 @@
 'use client'
 
 import * as React from 'react'
-import { type EmailPreference } from '@/db/schema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
@@ -21,9 +20,10 @@ import {
 import { Switch } from '@/components/ui/Switch'
 import { Icons } from '@/components/Icons'
 import { updateEmailPreferencesAction } from '@/app/_actions/email'
+import { SelectEmailPreferences } from '@/db/schema'
 
 interface UpdateEmailPreferencesFormProps {
-	emailPreference: EmailPreference
+	emailPreference: SelectEmailPreferences
 }
 
 type Inputs = z.infer<typeof updateEmailPreferencesSchema>

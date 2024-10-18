@@ -6,9 +6,6 @@ import { Products } from '@/components/Products'
 import { Shell } from '@/components/Shell'
 import { getProductsAction } from '@/app/_actions/product'
 
-// Running out of edge function execution units on vercel free plan
-// export const runtime = "edge"
-
 export const metadata: Metadata = {
 	title: 'Clothing',
 	description: 'Explore all our products',

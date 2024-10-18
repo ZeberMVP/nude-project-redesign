@@ -1,6 +1,5 @@
 'use client'
 
-import { type Product } from '@/db/schema'
 import Image from 'next/image'
 import Link from 'next/link'
 import * as React from 'react'
@@ -18,9 +17,10 @@ import {
 	CardTitle,
 } from '@/components/ui/Card'
 import { cn, formatPrice } from '@/lib/utils'
+import { SelectProducts } from '@/db/schema'
 
 interface ProductCardProps extends React.HTMLAttributes<HTMLDivElement> {
-	product: Product
+	product: SelectProducts
 	variant?: 'default' | 'switchable'
 	isAddedToCart?: boolean
 	onSwitch?: () => Promise<void>
@@ -96,7 +96,7 @@ export function ProductCard({
 			</Link>
 
 			{variant === 'default' ? (
-				<div className='relative lg:-top-32 p-8 lg:p-0 flex w-full items-center gap-2 sm:flex-row sm:justify-between'>
+				<div className='relative flex w-full items-center gap-2 p-8 sm:flex-row sm:justify-between lg:-top-32 lg:p-0'>
 					<Button
 						variant='ghost'
 						aria-label='Add to cart'

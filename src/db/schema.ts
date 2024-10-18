@@ -1,46 +1,47 @@
+import { sql } from 'drizzle-orm'
+
 import type { CartItem } from '@/types'
-import { sql, type InferModel } from 'drizzle-orm'
 import {
 	boolean,
-	datetime,
 	decimal,
-	int,
 	json,
-	mysqlEnum,
-	mysqlTable,
+	numeric,
+	pgEnum,
+	pgTable,
 	serial,
 	text,
 	timestamp,
 	varchar,
-} from 'drizzle-orm/mysql-core'
+} from 'drizzle-orm/pg-core'
 
-export const products = mysqlTable('products', {
+export const categoryEnum = pgEnum('category', [
+	'tees',
+	'hoodies & sweaters',
+	'bottoms',
+	'swimwear',
+	'knitwear',
+	'shirts & polos',
+	'underwear',
+	'outerwear',
+])
+
+export const products = pgTable('products', {
 	id: serial('id').primaryKey(),
 	name: varchar('name', { length: 191 }).notNull(),
 	description: text('description'),
 	image: text('image'),
-	category: mysqlEnum('category', [
-		'tees',
-		'hoodies & sweaters',
-		'bottoms',
-		'swimwear',
-		'knitwear',
-		'shirts & polos',
-		'underwear',
-		'outerwear',
-	])
-		.notNull()
-		.default('tees'),
+	category: categoryEnum().notNull().default('tees'),
 	price: decimal('price', { precision: 10, scale: 2 }).notNull().default('0'),
-	inventory: int('inventory').notNull().default(0),
-	createdAt: datetime('createdAt', { mode: 'string', fsp: 3 })
+	inventory: numeric('inventory').notNull().default('0'),
+	createdAt: timestamp('createdAt', { mode: 'string', precision: 3 })
 		.notNull()
 		.default(sql`CURRENT_TIMESTAMP(3)`),
 })
 
-export type Product = InferModel<typeof products>
+export type InsertProducts = typeof products.$inferInsert
+export type SelectProducts = typeof products.$inferSelect
 
-export const carts = mysqlTable('carts', {
+export const carts = pgTable('carts', {
 	id: serial('id').primaryKey(),
 	userId: varchar('userId', { length: 191 }),
 	paymentIntentId: varchar('paymentIntentId', { length: 191 }),
@@ -49,9 +50,10 @@ export const carts = mysqlTable('carts', {
 	createdAt: timestamp('createdAt').defaultNow(),
 })
 
-export type Cart = InferModel<typeof carts>
+export type InsertCarts = typeof carts.$inferInsert
+export type SelectCarts = typeof carts.$inferSelect
 
-export const emailPreferences = mysqlTable('email_preferences', {
+export const emailPreferences = pgTable('email_preferences', {
 	id: serial('id').primaryKey(),
 	userId: varchar('userId', { length: 191 }),
 	email: varchar('email', { length: 191 }).notNull(),
@@ -62,4 +64,5 @@ export const emailPreferences = mysqlTable('email_preferences', {
 	createdAt: timestamp('createdAt').defaultNow(),
 })
 
-export type EmailPreference = InferModel<typeof emailPreferences>
+export type InsertEmailPreferences = typeof emailPreferences.$inferInsert
+export type SelectEmailPreferences = typeof emailPreferences.$inferSelect

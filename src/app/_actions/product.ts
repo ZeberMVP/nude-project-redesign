@@ -1,7 +1,7 @@
 'use server'
 
 import { db } from '@/db'
-import { products, type Product } from '@/db/schema'
+import { products, SelectProducts } from '@/db/schema'
 import {
 	and,
 	asc,
@@ -58,60 +58,49 @@ export async function getProductsAction(
 ) {
 	const [column, order] =
 		(input.sort?.split('.') as [
-			keyof Product | undefined,
+			keyof SelectProducts | undefined,
 			'asc' | 'desc' | undefined
 		]) ?? []
 	const [minPrice, maxPrice] = input.price_range?.split('-') ?? []
 	const categories =
-		(input.categories?.split('.') as Product['category'][]) ?? []
+		(input.categories?.split('.') as SelectProducts['category'][]) ?? []
 
-	const { items, total } = await db.transaction(async (tx) => {
-		const items = await tx
-			.select()
-			.from(products)
-			.limit(input.limit)
-			.offset(input.offset)
-			.where(
-				and(
-					categories.length
-						? inArray(products.category, categories)
-						: undefined,
-					minPrice ? gte(products.price, minPrice) : undefined,
-					maxPrice ? lte(products.price, maxPrice) : undefined
-				)
+	const items = await db
+		.select()
+		.from(products)
+		.limit(input.limit)
+		.offset(input.offset)
+		.where(
+			and(
+				categories.length ? inArray(products.category, categories) : undefined,
+				minPrice ? gte(products.price, minPrice) : undefined,
+				maxPrice ? lte(products.price, maxPrice) : undefined
 			)
-			.orderBy(
-				column && column in products
-					? order === 'asc'
-						? asc(products[column])
-						: desc(products[column])
-					: desc(products.createdAt)
-			)
+		)
+		.orderBy(
+			column && column in products
+				? order === 'asc'
+					? asc(products[column])
+					: desc(products[column])
+				: desc(products.createdAt)
+		)
 
-		const total = await tx
-			.select({
-				count: sql<number>`count(${products.id})`,
-			})
-			.from(products)
-			.where(
-				and(
-					categories.length
-						? inArray(products.category, categories)
-						: undefined,
-					minPrice ? gte(products.price, minPrice) : undefined,
-					maxPrice ? lte(products.price, maxPrice) : undefined
-				)
+	const total = await db
+		.select({
+			count: sql<number>`count(${products.id})`,
+		})
+		.from(products)
+		.where(
+			and(
+				categories.length ? inArray(products.category, categories) : undefined,
+				minPrice ? gte(products.price, minPrice) : undefined,
+				maxPrice ? lte(products.price, maxPrice) : undefined
 			)
-
-		return {
-			items,
-			total: Number(total[0]?.count) ?? 0,
-		}
-	})
+		)
 
 	return {
 		items,
-		total,
+		total: Number(total[0]?.count) ?? 0,
 	}
 }
 

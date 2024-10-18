@@ -9,9 +9,6 @@ import { SubscribeToNewsletterForm } from '@/components/forms/SubscribeToNewslet
 import { buttonVariants } from '@/components/ui/Button'
 import { cn } from '@/lib/utils'
 
-// Running out of edge function execution units on vercel free plan
-// export const runtime = "edge"
-
 export default async function IndexPage() {
 	const allProducts = await db
 		.select()

@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 import { useRouter } from 'next/navigation'
-import { type Product } from '@/db/schema'
 
 import { cn } from '@/lib/utils'
 import { useDebounce } from '@/hooks/use-debounce'
@@ -18,6 +17,7 @@ import {
 import { Skeleton } from '@/components/ui/Skeleton'
 import { Icons } from '@/components/Icons'
 import { filterProductsAction } from '@/app/_actions/product'
+import { SelectProducts } from '@/db/schema'
 
 export function Combobox() {
 	const router = useRouter()
@@ -26,8 +26,8 @@ export function Combobox() {
 	const debouncedQuery = useDebounce(query, 300)
 	const [data, setData] = React.useState<
 		| {
-				category: Product['category']
-				products: Pick<Product, 'id' | 'name' | 'category'>[]
+				category: SelectProducts['category']
+				products: Pick<SelectProducts, 'id' | 'name' | 'category'>[]
 		  }[]
 		| null
 	>(null)
@@ -77,7 +77,7 @@ export function Combobox() {
 				<span className='hidden xl:inline-flex'>Search products</span>
 				<span className='sr-only'>Search products</span>
 			</Button>
-			<CommandDialog position='top' open={isOpen} onOpenChange={setIsOpen}>
+			<CommandDialog open={isOpen} onOpenChange={setIsOpen}>
 				<CommandInput
 					placeholder='Search products...'
 					value={query}
